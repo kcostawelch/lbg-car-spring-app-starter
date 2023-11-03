@@ -4,7 +4,7 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
 COPY src ./src
-RUN mvn package
+RUN mvn package -e
 
 # Stage 2: Run the application
 FROM openjdk:11-jre
